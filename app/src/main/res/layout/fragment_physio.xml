@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PhysioFragment"
+    android:background="@color/background">
+
+
+    <ImageView
+        android:id="@+id/logoimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="180dp"
+        app:layout_constraintBottom_toTopOf="@id/name_Physio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.364"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="320dp"
+        android:background="@color/transparent"
+
+        app:icon="@drawable/logout"
+        app:iconTint="@color/letter"
+
+        app:layout_constraintVertical_bias="0.364"
+        app:layout_constraintBottom_toTopOf="@id/name_Physio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <Button
+
+        style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="320dp"
+        android:background="@color/transparent"
+
+        app:icon="@drawable/back"
+        app:iconTint="@color/letter"
+
+        app:layout_constraintVertical_bias="0.364"
+        app:layout_constraintBottom_toTopOf="@id/name_Physio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/name_Physio"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="180dp"
+        android:ems="10"
+        android:hint="@string/name"
+        android:background="@drawable/custom_input"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="@font/manrope_medium"
+        android:padding="15dp"
+
+
+        />
+
+    <EditText
+        android:id="@+id/adress_Physio"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/adress"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name_Physio"
+        android:fontFamily="@font/manrope_medium"
+        android:background="@drawable/custom_input"
+        android:padding="15dp"
+        />
+
+    <EditText
+        android:id="@+id/afm_Physio"
+        android:layout_width="370dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:hint="@string/afm"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/adress_Physio"
+        android:fontFamily="@font/manrope_medium"
+        android:background="@drawable/custom_input"
+        android:padding="15dp"
+        />
+
+    <Button
+        android:id="@+id/mAinButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+
+        android:backgroundTint="@color/MainColor"
+        android:insetTop="5dp"
+
+        android:insetBottom="5dp"
+        android:text="@string/main_button"
+        app:cornerRadius="10dp"
+        android:fontFamily="@font/manrope_bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/afm_Physio"
+        app:layout_constraintVertical_bias="0.351" />
+
+
+
+    <Button
+        android:id="@+id/SecButton"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+
+        android:backgroundTint="@color/white"
+        android:insetTop="5dp"
+
+        android:insetBottom="5dp"
+        android:text="@string/sec_button"
+        android:textColor="@color/MainColor"
+        app:cornerRadius="10dp"
+        android:fontFamily="@font/manrope_bold"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mAinButton"
+        app:layout_constraintVertical_bias="0.01"
+        app:strokeColor="@color/MainColor"
+
+        app:strokeWidth="3dp" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Humanaid</string>
+    <string name="name">Όνομα φυσιοθεραπευτηρίου</string>
+    <string name="adress">Διεύθυνση</string>
+    <string name="afm">ΑΦΜ</string>
+    <string name="main_button">Προσθήκη</string>
+    <string name="sec_button">Ακύρωση</string>
+    <string name="welcome">Καλωσορίσατε</string>
+    <string name="paragraph">"Ξεκινήστε την εμπειρία σας στο νέο σύστημα  \n διαχείρισης και προσθήκης  νέων \n φυσιοθεραπευτηρίων και παροχών"</string>
+    <string name="id_service">Κωδικός</string>
+    <string name="name_service">Όνομα παροχής</string>
+    <string name="description">Περιγραφή</string>
+    <string name="cost">Κόστος/ανά συνεδρία</string>
+    <string name="success_parag">"Η ενέργειά σας \n ολοκληρώθηκε με επιτυχία"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
