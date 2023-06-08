@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+    <item android:title="Αρχική"
+        android:icon="@drawable/home"
+        android:id="@+id/home"
+        />
     <item android:title="Φυσιοθεραπευτήριο"
         android:icon="@drawable/physio"
         android:id="@+id/physio"
@@ -9,8 +14,5 @@
     <item android:title="Παροχές"
         android:icon="@drawable/service"
         android:id="@+id/service"/>
-    <item android:title="Αρχική"
-        android:icon="@drawable/home"
-        android:id="@+id/home"
-        />
+
 </menu>

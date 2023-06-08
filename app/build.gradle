@@ -7,9 +7,9 @@ android {
     namespace 'com.example.humanaid'
     compileSdk 33
 
-    buildFeatures{
-        viewBinding true
-    }
+  buildFeatures{
+      viewBinding true
+  }
     defaultConfig {
         applicationId "com.example.humanaid"
         minSdk 24
