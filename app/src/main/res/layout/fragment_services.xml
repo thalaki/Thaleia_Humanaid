@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="180dp"
-        app:layout_constraintBottom_toTopOf="@id/name_Physio"
+        app:layout_constraintBottom_toTopOf="@id/category_spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.606"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         app:iconTint="@color/letter"
 
         app:layout_constraintVertical_bias="0.364"
-        app:layout_constraintBottom_toTopOf="@id/name_Physio"
+        app:layout_constraintBottom_toTopOf="@id/category_spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -52,18 +52,16 @@
         app:iconTint="@color/letter"
 
         app:layout_constraintVertical_bias="0.364"
-        app:layout_constraintBottom_toTopOf="@id/name_Physio"
+        app:layout_constraintBottom_toTopOf="@id/category_spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/name_Physio"
+    <Spinner
+        android:id="@+id/category_spinner"
         android:layout_width="370dp"
         android:layout_height="55dp"
         android:layout_marginTop="120dp"
-        android:ems="10"
-        android:hint="@string/name"
         android:background="@drawable/custom_input"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,9 +69,11 @@
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/manrope_medium"
         android:padding="15dp"
+        android:hint="Select Category"
+        android:spinnerMode="dropdown" />
 
 
-        />
+
 
     <EditText
         android:id="@+id/service_id"
@@ -85,7 +85,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name_Physio"
+        app:layout_constraintTop_toBottomOf="@id/category_spinner"
         android:fontFamily="@font/manrope_medium"
         android:background="@drawable/custom_input"
         android:padding="15dp"
