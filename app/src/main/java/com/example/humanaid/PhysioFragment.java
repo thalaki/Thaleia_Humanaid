@@ -1,64 +1,89 @@
 package com.example.humanaid;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PhysioFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.example.humanaid.PhysioInfo;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class PhysioFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+  private EditText physioNameEdt, addressEdit, afmEdt;
+  private Button sendDatabtn;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+  FirebaseDatabase firebaseDatabase;
+  DatabaseReference databaseReference;
 
-    public PhysioFragment() {
-        // Required empty public constructor
-    }
+  PhysioInfo physioInfo;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PhysioFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PhysioFragment newInstance(String param1, String param2) {
-        PhysioFragment fragment = new PhysioFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+  @Override
+  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    View view = inflater.inflate(R.layout.fragment_physio, container, false);
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    physioNameEdt = view.findViewById(R.id.name_Physio);
+    addressEdit = view.findViewById(R.id.adress_Physio);
+    afmEdt = view.findViewById(R.id.afm_Physio);
+
+    firebaseDatabase = FirebaseDatabase.getInstance();
+    databaseReference = firebaseDatabase.getReference("EmployeeInfo");
+
+    physioInfo = new PhysioInfo();
+
+    sendDatabtn = view.findViewById(R.id.mAinButton);
+
+    sendDatabtn.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        String name = physioNameEdt.getText().toString();
+        String address = addressEdit.getText().toString();
+        String afm = afmEdt.getText().toString();
+
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(address) || TextUtils.isEmpty(afm)) {
+          Toast.makeText(getActivity(), "Παρακαλώ εισάγετε δεδομένα", Toast.LENGTH_SHORT).show();
+        } else {
+          addDataToFirebase(name, address, afm);
         }
-    }
+      }
+    });
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_physio, container, false);
-    }
+    return view;
+  }
+
+  private void addDataToFirebase(String name, String address, String afm) {
+    // Create a new PhysioInfo object and set its properties
+    PhysioInfo physio = new PhysioInfo();
+    physio.setName(name);
+    physio.setAddress(address);
+    physio.setAfm(afm);
+
+    // Get a new child reference under "EmployeeInfo" to push the data
+    DatabaseReference physioRef = databaseReference.child("Physios").push();
+
+    // Set the value of the new child reference with the PhysioInfo object
+    physioRef.setValue(physio)
+            .addOnSuccessListener(new OnSuccessListener<Void>() {
+              @Override
+              public void onSuccess(Void aVoid) {
+                Toast.makeText(getActivity(), "Data added successfully", Toast.LENGTH_SHORT).show();
+              }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+              @Override
+              public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Failed to add data: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+              }
+            });
+  }
 }
