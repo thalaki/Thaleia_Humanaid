@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "600817840796",
+    "project_id": "humanaid-14d86",
+    "storage_bucket": "humanaid-14d86.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600817840796:android:ee14c5163d2ca7c621f359",
+        "android_client_info": {
+          "package_name": "com.example.humanaid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "600817840796-0fe5mkl3mfqne1dhpsh46lfm9ft53tjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.humanaid",
+            "certificate_hash": "65cfae8e4e63552acdd1db3072e9fce4ba2a3ef7"
+          }
+        },
+        {
+          "client_id": "600817840796-nh8a1i5aenlv3gje4qecdigo2p3mrnah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJv9WRlR36LoS3G6aB8SWac70d2vG-rO4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "600817840796-nh8a1i5aenlv3gje4qecdigo2p3mrnah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
