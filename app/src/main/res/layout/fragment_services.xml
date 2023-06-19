@@ -69,8 +69,10 @@
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="@font/manrope_medium"
         android:padding="15dp"
-        android:hint="Select Category"
-        android:spinnerMode="dropdown" />
+        android:spinnerMode="dropdown"
+        android:prompt="@string/spinner_prompt"
+        android:drawableEnd="@drawable/arrow_down"
+        />
 
 
 
