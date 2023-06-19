@@ -13,4 +13,9 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="menu_icons">#B2B2B2</color>
     <color name="text">#1D1D1D</color>
+    <color name="bgcolor">#f3f3f3</color>
+    <color name="usernameBox">#D0D8EA</color>
+    <color name="usernamecolor">#7c7c7c</color>
+    <color name="butlogin">#5C80CD</color>
+
 </resources>
