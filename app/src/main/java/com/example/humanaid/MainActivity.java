@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.humanaid.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
     @Override

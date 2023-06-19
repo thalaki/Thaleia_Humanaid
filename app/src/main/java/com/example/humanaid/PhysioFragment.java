@@ -62,21 +62,45 @@ public class PhysioFragment extends Fragment {
   }
 
   private void addDataToFirebase(String name, String address, String afm) {
-    // Create a new PhysioInfo object and set its properties
+    boolean isNameValid = isValidName(name);
+    boolean isAddressValid = isValidAddress(address);
+    boolean isAfmValid = isValidAfm(afm);
+
+    if (!isNameValid) {
+      Toast.makeText(getActivity(), "Λάθος στοιχεία, παρακαλώ καταχωρήστε σωστά το όνομα.", Toast.LENGTH_SHORT).show();
+      return;
+    }
+
+    if (!isAddressValid) {
+      Toast.makeText(getActivity(), "Λάθος διευθυνσή. παρακαλώ καταχωρήστε διευθυνσή και αριθμό.", Toast.LENGTH_SHORT).show();
+      return;
+    }
+
+    if (!isAfmValid) {
+      Toast.makeText(getActivity(), "Λάθος ΑΦΜ, παρακαλώ πληκτρολογήστε το σωστό.", Toast.LENGTH_SHORT).show();
+      return;
+    }
+
+    // All input values are valid, proceed with adding data to Firebase
     PhysioInfo physio = new PhysioInfo();
     physio.setName(name);
     physio.setAddress(address);
     physio.setAfm(afm);
 
-    // Get a new child reference under "EmployeeInfo" to push the data
     DatabaseReference physioRef = databaseReference.child("Physios").push();
 
-    // Set the value of the new child reference with the PhysioInfo object
     physioRef.setValue(physio)
             .addOnSuccessListener(new OnSuccessListener<Void>() {
               @Override
               public void onSuccess(Void aVoid) {
                 Toast.makeText(getActivity(), "Data added successfully", Toast.LENGTH_SHORT).show();
+
+                SuccessFragment successFragment = new SuccessFragment();
+
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame_layout, successFragment)
+                        .addToBackStack(null)
+                        .commit();
               }
             })
             .addOnFailureListener(new OnFailureListener() {
@@ -86,4 +110,24 @@ public class PhysioFragment extends Fragment {
               }
             });
   }
-}
+
+  private boolean isValidName(String name) {
+    // Validate that the name contains only letters (no digits or special characters)
+    String pattern = "^[a-zA-Z]+$";
+    return name.matches(pattern);
+  }
+
+  private boolean isValidAddress(String address) {
+    // Validate that the address contains only letters, numbers, and spaces (no special characters)
+    String pattern = "^[a-zA-Z0-9 ]+$";
+    return address.matches(pattern);
+  }
+
+
+  private boolean isValidAfm(String afm) {
+    // Validate that the AFM contains only numbers (no letters or special characters)
+    String pattern = "^[0-9]+$";
+    return afm.matches(pattern);
+  }
+  }
+
