@@ -37,7 +37,7 @@ public class LoginFragment extends Fragment {
                 String password = passwordEditText.getText().toString();
 
                 // Check if the entered credentials match the predefined users
-                if (username.equals("syllogos") && password.equals("1234")) {
+                if (username.equals("admin1") && password.equals("1234")) {
                     // If login is successful, call onLoginSuccess() method in MainActivity
                     MainActivity mainActivity = (MainActivity) getActivity();
                     if (mainActivity != null) {
