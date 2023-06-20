@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.humanaid.PhysioInfo;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -21,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class PhysioFragment extends Fragment {
 
   private EditText physioNameEdt, addressEdit, afmEdt;
-  private Button sendDatabtn;
+  private Button sendDatabtn, logoutButton;
 
   FirebaseDatabase firebaseDatabase;
   DatabaseReference databaseReference;
@@ -123,11 +125,9 @@ public class PhysioFragment extends Fragment {
     return address.matches(pattern);
   }
 
-
   private boolean isValidAfm(String afm) {
     // Validate that the AFM contains only numbers (no letters or special characters)
     String pattern = "^[0-9]+$";
     return afm.matches(pattern);
   }
-  }
-
+}
