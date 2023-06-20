@@ -18,6 +18,6 @@
     <string name="buttonLogin">Σύνδεση</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="spinner_prompt">Please pick</string>
+    <string name="spinner_prompt">Επιλέξτε φυσικοθεραπευτήριο</string>
 
 </resources>

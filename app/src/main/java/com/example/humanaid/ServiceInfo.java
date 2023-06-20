@@ -5,9 +5,9 @@ public class ServiceInfo {
     private String password;
     private String serviceName;
     private String description;
-    private int price;
+    private String price;
 
-    public ServiceInfo(String physioName, String password, String serviceName, String description, int price) {
+    public ServiceInfo(String physioName, String password, String serviceName, String description, String price) {
         this.physioName = physioName;
         this.password = password;
         this.serviceName = serviceName;
@@ -48,11 +48,11 @@ public class ServiceInfo {
         this.description = description;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

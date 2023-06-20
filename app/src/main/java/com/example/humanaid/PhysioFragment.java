@@ -13,10 +13,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.humanaid.PhysioInfo;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,6 +32,12 @@ public class PhysioFragment extends Fragment {
 
   PhysioInfo physioInfo;
 
+
+  private RecyclerView mRecyclerView;
+  private BottomNavigationView bottomNavigationView;
+
+
+
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_physio, container, false);
@@ -39,11 +47,22 @@ public class PhysioFragment extends Fragment {
     afmEdt = view.findViewById(R.id.afm_Physio);
 
     firebaseDatabase = FirebaseDatabase.getInstance();
-    databaseReference = firebaseDatabase.getReference("EmployeeInfo");
+    databaseReference = firebaseDatabase.getReference("PhysioInfo");
 
     physioInfo = new PhysioInfo();
 
     sendDatabtn = view.findViewById(R.id.mAinButton);
+
+    Button cancelButton = view.findViewById(R.id.SecButton);
+    cancelButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        // Clear the EditText fields
+        physioNameEdt.setText("");
+        addressEdit.setText("");
+        afmEdt.setText("");
+      }
+    });
 
     sendDatabtn.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -115,7 +134,7 @@ public class PhysioFragment extends Fragment {
 
   private boolean isValidName(String name) {
     // Validate that the name contains only letters (no digits or special characters)
-    String pattern = "^[a-zA-Z]+$";
+    String pattern = "^[a-zA-Z\\s]+$";
     return name.matches(pattern);
   }
 
