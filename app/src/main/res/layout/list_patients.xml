@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/itemView"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src = "@drawable/profile1"/>
+        <TextView
+            android:id="@+id/patientsName"
+            android:layout_marginStart="70dp"
+            android:text="name"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/patientsAmka"
+            android:layout_marginStart="70dp"
+            android:text="amka"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below= "@id/patientsName"
+            android:layout_marginTop= "7dp"/>
+        <TextView
+            android:id="@+id/patientsStreet"
+            android:layout_marginStart="10dp"
+            android:text="Street"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below= "@id/patientsName"
+            android:layout_toRightOf="@id/patientsAmka"
+            android:layout_marginTop= "7dp"/>
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>

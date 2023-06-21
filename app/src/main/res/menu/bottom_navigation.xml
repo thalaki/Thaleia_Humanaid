@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <item android:title="Ιστορικό"
+        android:icon="@drawable/history"
+        android:id="@+id/history"
+        />
+
+    <item android:title="Ραντεβού"
+        android:icon="@android:drawable/ic_menu_my_calendar"
+        android:id="@+id/calendar"/>
+
+    <item android:title="Αιτήματα"
+        android:icon="@android:drawable/ic_menu_rotate"
+        android:id="@+id/request"
+        />
+    <item android:title="Προσθήκη επίσκεψης"
+        android:icon="@android:drawable/ic_input_add"
+        android:id="@+id/add"
+        />
+
+</menu>

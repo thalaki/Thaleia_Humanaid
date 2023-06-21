@@ -3,5 +3,10 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/manrope_bold</item>
         <item>@font/manrope_medium</item>
+        <item>@font/inter</item>
+        <item>@font/inter_bold</item>
+        <item>@font/inter_extrabold</item>
+        <item>@font/inter_medium</item>
+        <item>@font/inter_semibold</item>
     </array>
 </resources>

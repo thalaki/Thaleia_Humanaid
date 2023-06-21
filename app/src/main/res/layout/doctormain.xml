@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivityDoctor">
+
+    <RelativeLayout
+        android:id="@+id/upperMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="615dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="320dp"
+            android:background="@android:color/transparent"
+            app:icon="@drawable/back"
+            app:iconTint="@android:color/black"
+            app:layout_constraintVertical_bias="0.364"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/logout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/logout" />
+
+        <ImageView
+            android:id="@+id/profileLogo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/logout"
+            android:src="@drawable/profile1"
+            android:layout_marginRight="4dp"
+            />
+
+        <ImageButton
+            android:id="@+id/add_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="4dp"
+            android:background="@android:color/transparent"
+            android:layout_marginVertical="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/profileLogo"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.36"
+            app:srcCompat="@drawable/add" />
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginVertical="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/add_button"
+            android:src="@drawable/home"
+            android:layout_marginRight="4dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/my_color" />
+        <!--        <View-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="1dp"-->
+        <!--            android:layout_alignParentTop="true"-->
+        <!--            android:background="@color/my_color" />-->
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/upperMenu"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_below="@+id/upperMenu"
+        tools:context=".MainActivityDoctor"
+        >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/searchMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@drawable/ic_menu_search_white"
+            />
+
+
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/my_color"
+            android:layout_alignParentTop="true" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

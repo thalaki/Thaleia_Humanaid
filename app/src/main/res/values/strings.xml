@@ -16,8 +16,19 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="buttonLogin">Σύνδεση</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="spinner_prompt">Επιλέξτε φυσικοθεραπευτήριο</string>
+    <string name="paragraph1">Ξεκινήστε την εμπειρία σας στο νέο σύστημα διαχείρισης των ασθενών και των ραντεβού σας</string>
+    <string name="patient_name">Όνομα ασθενή</string>
+    <string name="patient_AMKA">AMKA</string>
+    <string name="string_in_patient">Προσθήκη νέου ασθενή:</string>
+    <string name="login_button">Σύνδεση</string>
+    <string name="forgot_pass">Ξεχάσατε τον κωδικό σας; \n Επικοινωνήστε μαζί μας</string>
+    <string name="bullet">bullet</string>
+    <string name="slash">/</string>
+    <string name="calendar">Ημερολόγιο:</string>
+
+
 
 </resources>

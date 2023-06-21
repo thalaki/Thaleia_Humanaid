@@ -17,5 +17,11 @@
     <color name="usernameBox">#D0D8EA</color>
     <color name="usernamecolor">#7c7c7c</color>
     <color name="butlogin">#5C80CD</color>
+    <color name="my_color">#122959</color>
+    <color name="gray">#d9dbdb</color>
+    <color name="login_button">#BF2757BC</color>
+    <color name="login_texts">#2B2757BC</color>
+
+
 
 </resources>
